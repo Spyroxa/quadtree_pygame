@@ -5,6 +5,7 @@ Un quadtree ou arbre quaternaire (arbre Q) est une structure de données de type
 
 ## Installation
 1)Cloner le dépot
+
 2)Vérifier que toutes les dépendances soient installés avec :
 ```shell
 pip install requirements.txt
