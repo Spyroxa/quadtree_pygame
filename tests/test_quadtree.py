@@ -32,14 +32,16 @@ def test_create():
     assert quadtree.depth == 3
 
 def test_visualization(tk_root):
+    # Test visualization
     quad_tree = TkQuadTree(master=tk_root, hg=True, hd=False, bd=False, bg=True)
     tk_root.update_idletasks()
 
-    # Création de l'image
+    # Create image
     tk_root.after(500, lambda: tk_root.destroy())
     tk_root.mainloop()
 
 def test_quadtree_easy(tk_root):
+    # Test draw quadtree_easy
     filename = "files/quadtree_easy.txt"
     q = QuadTree.fromFile(filename)
     quad_tree = TkQuadTree(master=tk_root, hg=q.hg, hd=q.hd, bd=q.bd, bg=q.bg)
@@ -48,6 +50,7 @@ def test_quadtree_easy(tk_root):
     tk_root.mainloop()
 
 def test_quadtree(tk_root):
+    # Test draw quadtree
     filename = "files/quadtree.txt"
     q = QuadTree.fromFile(filename)
     quad_tree = TkQuadTree(master=tk_root, hg=q.hg, hd=q.hd, bd=q.bd, bg=q.bg)
@@ -56,6 +59,7 @@ def test_quadtree(tk_root):
     tk_root.mainloop()
 
 def test_create_from_data(tk_root):
+    # Test draw from a new data created
     data = [
         [0, 0, 0, [0, 1, 0, 0]],
         [0, 0, [1, 0, 0, 0], 0],
@@ -69,6 +73,7 @@ def test_create_from_data(tk_root):
     tk_root.mainloop()
 
 def test_create_creeper(tk_root):
+    # Test draw an quadtree creeper
     data = [
         [0,0,[1,0,0,1],[0,1,1,0]],
         [0,0,[1,0,0,1],[0,1,1,0]],

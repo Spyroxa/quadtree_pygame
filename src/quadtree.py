@@ -25,12 +25,12 @@ class QuadTree:
     def fromFile(filename: str) -> QuadTree:
         """ Open a given file, containing a textual representation of a list"""
         with open(filename, 'r') as file:
-            content = file.read().strip()  # En supposant que le fichier contient une représentation formatée du QuadTree
+            content = file.read().strip()
         return QuadTree._fromString(content)
 
     @staticmethod
     def _fromString(content: str) -> QuadTree:
-        """Méthode pour créer un QuadTree à partir d'une représentation textuelle"""
+        """Method to create a QuadTree from a textual representation"""
 
         def parse_node(node_data, depth=0):
             if isinstance(node_data, list):
@@ -72,14 +72,12 @@ class TkQuadTree(QuadTree):
         self.paint()
 
     def paint(self):
-        """Représentation TK d'un Quadtree"""
-
-        self.canvas.delete("all")  # Effacer le canevas
+        self.canvas.delete("all")
         self._paint_quadtree(self, 0, 0, 400, 400)
 
 
     def _paint_quadtree(self, node, x, y, width, height):
-        """Dessine récursivement le Quadtree sur le canevas"""
+        """Recursively draws the Quadtree on the canvas"""
         if isinstance(node, QuadTree):
             mid_x = x + width / 2
             mid_y = y + height / 2
